@@ -14,7 +14,9 @@ def load_data():
 
 def train_model(X_train, y_train, n_estimators=100, max_depth=None):
     model = RandomForestClassifier(
-        n_estimators=n_estimators, max_depth=max_depth, random_state=42
+        n_estimators=n_estimators,
+        max_depth=max_depth,
+        random_state=42
     )
     model.fit(X_train, y_train)
     return model
@@ -41,14 +43,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-Add a minimal README.md:
-# MLOps Iris Classifier
-
-A sample ML project used to demonstrate Git-based version control
-workflows in an MLOps context.
-
-## Setup
-\`\`\`bash
-pip install -r requirements.txt
-python src/train.py
-\`\`\`

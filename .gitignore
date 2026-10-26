@@ -1,29 +1,24 @@
+cat > .gitignore <<'EOF'
 # Python
 __pycache__/
-*.pyc
-.venv/
-venv/
+*.py[cod]
 *.egg-info/
 
-# Data & Models (tracked separately via DVC in Experiment 3)
-data/*.csv
-data/*.parquet
-models/*.pkl
-models/*.joblib
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+
+# Test and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MLflow generated files
 mlruns/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Environment
-.env
-
-# IDE
-.vscode/
-.idea/
-
-# MLflow
-.venv-mlflow/
-mlflow.db
 mlartifacts/
-confusion_matrix_*.txt
+mlflow.db
+
+# Generated model files
+models/*.joblib
+EOF
